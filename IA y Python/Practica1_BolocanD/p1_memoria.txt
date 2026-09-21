@@ -1,0 +1,2 @@
+IA es un campo que crea sistemas que realizan tareas inteligentes; Machine Learning es una subárea que aprende modelos a partir de datos.
+El problema California Housing es supervisado y de regresión, porque la variable objetivo `MedHouseVal` es continua y se predice a partir de características.
