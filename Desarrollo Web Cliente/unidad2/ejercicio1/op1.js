@@ -1,13 +1,13 @@
 function out(text) { document.getElementById('out').textContent = text }
 
 function ej1() {
-  const firstName = prompt('Nombre:');
-  const lastName = prompt('Primer apellido:');
-  const fullName = (firstName || '') + ' ' + (lastName || '');
+  const nombre = prompt('Nombre:');
+  const apellido = prompt('Primer apellido:');
+  const nombreCompleto = (nombre || '') + ' ' + (apellido || '');
   const age = Number(prompt('Edad:'));
   if (Number.isNaN(age)) return out('Edad no valida');
-  const birthYear = new Date().getFullYear() - age;
-  out('Nombre completo: ' + fullName + '\nAño de nacimiento: ' + birthYear);
+  const año = new Date().getFullYear() - age;
+  out('Nombre completo: ' + nombreCompleto + '\nAño de nacimiento: ' + año);
 }
 
 function ej2() {
@@ -23,25 +23,25 @@ function ej3() {
 }
 
 function ej4() {
-  const number = Number(prompt('numero principal:'));
-  const divisor = Number(prompt('¿Múltiplo de?:'));
-  if (Number.isNaN(number) || Number.isNaN(divisor)) return out('numero no valido');
-  const isMultiple = number % divisor === 0;
-  out(number + ' ' + (isMultiple ? 'es' : 'no es') + ' múltiplo de ' + divisor);
+  const num = Number(prompt('numero principal:'));
+  const divisor = Number(prompt('multiplo de: '));
+  if (Number.isNaN(num) || Number.isNaN(divisor)) return out('numero no valido');
+  const isMultiple = num % divisor === 0;
+  out(num + ' ' + (isMultiple ? 'es' : 'no es') + ' multiplo de ' + divisor);
 }
 
 function ej5() {
-  const months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-  out(months.join('\n'));
+  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  out(meses.join('\n'));
 }
 
 function ej6() {
   const num1 = Number(prompt('Primer entero:'));
   const num2 = Number(prompt('Segundo entero:'));
   if (Number.isNaN(num1) || Number.isNaN(num2)) return out('numero no valido');
-  const larger = num1 === num2 ? 'iguales' : (num1 > num2 ? num1 : num2);
-  const describe = v => (v > 0 ? v + ' positivo' : v + ' no positivo');
-  out('Mayor: ' + larger + '\n' + describe(num1) + ', ' + describe(num2));
+  const larger = num1 === num2 ? 'iguales' : Math.max(num1, num2);
+  const comparar = val => (val > 0 ? val + ' positivo' : val + ' negativo');
+  out('Mayor: ' + larger + '\n' + comparar(num1) + ', ' + comparar(num2));
 }
 
 function ej7() {
