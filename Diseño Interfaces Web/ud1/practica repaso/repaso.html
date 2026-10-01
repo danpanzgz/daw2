@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a nuestra tienda de café</h1>
+        <h2>Con nosotros el café sabe mejor</h2>
+    </header>
+
+    <section>
+        <h3>Sobre nosotros</h3>
+        <p>En nuestra tienda de café, nos apasiona ofrecer la mejor
+            experiencia cafetera a nuestros clientes. Desde granos
+            seleccionados hasta métodos de preparación innovadores,
+             nos esforzamos por brindar un sabor excepcional en cada taza.
+        </p>
+
+        <article>
+            <h4>Rancilio Porta Filtro Sin Fondo</h4>
+            <ul>
+                <img src="images/Rancilio Porta Filtro Sin Fondo.jpg" alt="Portafiltro Rancilio" width="200">
+                <li>Material: Acero inoxidable</li>
+                <li>Compatibilidad: Diseñado para portafiltros de 58 mm</li>
+                <li>Uso: Ideal para preparar espresso con precisión y consistencia</li>
+                <li>Beneficio: Permite un flujo uniforme del agua, mejorando la extracción del café</li>
+            </ul>
+        </article>
+        <article>
+            <h4>Nivelador de Café</h4>
+            <ul>
+                <img src="images/nivelador de café.png" alt="Nivelador de Café" width="200">
+                <li>Material: Acero inoxidable</li>
+                <li>Uso: Ideal para distribuir café en eventos y ocasiones especiales</li>
+                <li>Beneficio: Facilita compresar el cafe ofreciendo un sabor excepcional</li>
+            </ul>
+        </article>
+        <article>
+            <h4>Jarra de leche</h4>
+            <ul>
+                <img src="images/Jarra de leche.avif" alt="Jarra de leche" width="200">
+                <li>Material: Acero inoxidable</li>
+                <li>Capacidad: Disponible en diferentes tamaños para adaptarse a tus necesidades</li>
+                <li>Uso: Perfecta para espumar leche y crear deliciosas bebidas de café</li>
+                <li>Beneficio: Su diseño ergonómico facilita el vertido y la creación de arte latte</li>
+            </ul>
+        </article>
+        <article>
+            <h4>Base de Tamping</h4>
+            <ul>
+                <img src="images/Base de Tamping.png" alt="Base de Tamping" width="200">
+                <li>Material: Acero inoxidable</li>
+                <li>Uso: Proporciona una superficie estable para compactar el café en el portafiltro</li>
+                <li>Beneficio: Ofrece una base estable y segura durante el proceso de prensado del café </li>
+            </ul>
+    </section>
+
+    <section>
+        <h3>Formulario de Contacto</h3>
+        <form action="procesar_formulario.php" method="post" class="form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2026 Tienda de Café. Todos los derechos reservados.</p>
+        <p>Para más información, contactanos en info@tiendacafe.com</p>
+    </footer>
+</body>
+</html>
