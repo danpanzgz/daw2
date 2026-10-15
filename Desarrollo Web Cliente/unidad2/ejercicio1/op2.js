@@ -13,7 +13,7 @@ function o2(){
 }
 
 function o3(){
-  const dec = parseInt(prompt('Introduce decimal (ej. 26):'),10);
+  const dec = parseInt(prompt('Introduce decimal (ej. 26):'),10);    
   const shift = parseInt(prompt('Desplazamiento a la izquierda (ej. 2):'),10);
   if(isNaN(dec)||isNaN(shift)) return out('Entrada no valida');
   out(dec + ' << ' + shift + ' = ' + (dec << shift));

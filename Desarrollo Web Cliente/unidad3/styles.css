@@ -1,0 +1,122 @@
+/* ==========================================================================
+   1. Variables de diseño y tema (Custom Properties)
+   ========================================================================== */
+:root {
+  /* Paleta de colores */
+  --color-bg: #ffffff;
+  --color-card: #f5f7fb;
+  --color-primary: #0366d6;
+  --color-primary-hover: #0256b4;
+  --color-text: #111111;
+  --color-muted: #6b7280;
+
+  /* Espaciado y bordes */
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+
+  /* Estructura */
+  --max-width-container: 900px;
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --transition-fast: 0.2s ease;
+}
+
+/* ==========================================================================
+   2. Reseteo básico y Tipografía
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   3. Layout y Contenedores
+   ========================================================================== */
+.container {
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+  padding: var(--spacing-lg);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ==========================================================================
+   4. Componentes
+   ========================================================================== */
+h1 {
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.75rem;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+pre#out {
+  background-color: var(--color-card);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  color: var(--color-text);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   5. Diseño Responsivo
+   ========================================================================== */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .controls > button {
+    flex: 1 1 100%;
+  }
+}
