@@ -1,8 +1,10 @@
+// Ejercicios de temporizadores, strings, arrays y lógica de control.
 function out(text) {
   const output = document.getElementById('out');
   output.textContent += (output.textContent ? '\n' : '') + text;
 }
 
+// Activa un reloj que actualiza la hora cada milisegundo.
 function iniciarReloj() {
   reloj = setInterval(() => {
     const d = new Date();
@@ -10,6 +12,7 @@ function iniciarReloj() {
   }, 1);
 }
 
+// Muestra propiedades y métodos básicos del objeto String.
 function objetoString() {
   document.getElementById('out').textContent = '';
 
@@ -21,6 +24,7 @@ function objetoString() {
   out("Cambiar letras x caracteres: " + texto.replace("letras", "caracteres"));
 }
 
+// Genera una combinación aleatoria de números y estrellas para Euromillones.
 function mostrarPuestaEuromillones() {
   document.getElementById('out').textContent = '';
 
@@ -33,11 +37,13 @@ function pantallaAnterior() {
   window.history.back();
 }
 
+// Abre una nueva ventana con Google como ejemplo de uso de popup.
 function abrePopup() {
   window.open("https://www.google.com", "popup", "width=center,height=center");
 
 }
 
+// Muestra los múltiplos de 3 comprendidos entre 1 y 500.
 function bucleMultipleTres() {
   for (let i = 1; i <= 500; i++) {
     if (i % 3 === 0) {
@@ -46,6 +52,7 @@ function bucleMultipleTres() {
   }
 }
 
+// Pide 10 números para identificar el máximo y el mínimo.
 function mostrarMayorMenor() {
   let mayor = 0;
   let menor = 0;
@@ -62,6 +69,7 @@ function mostrarMayorMenor() {
   out("El número menor es: " + menor);
 }
 
+// Clasifica una talla según la categoría de tamaño indicada.
 function identificarTalla() {
   let talla = prompt("Introduce tu talla (XXL, XL,L,M,S, XS, XXS):").toUpperCase();
   switch (talla) {
@@ -84,12 +92,14 @@ function identificarTalla() {
   }
 }
 
+// Calcula la longitud de una circunferencia a partir del radio.
 function calcularLongitudCircumferencia() {
   let radio = parseFloat(prompt("Introduce el radio de la circunferencia:"));
   let longitud = 2 * Math.PI * radio;
   out("La longitud de la circunferencia es: " + longitud.toFixed(2));
 }
 
+// Genera un conjunto aleatorio de 5 números y 2 estrellas.
 function puestaEuromillones() {
   let numeros = [];
   while (numeros.length < 5) {
@@ -108,6 +118,7 @@ function puestaEuromillones() {
   out(numeros.join(' - ') + ' | ' + estrellas.join(' - '));
 }
 
+// Crea una matriz en pantalla con filas y columnas indicadas por el usuario.
 function tablaMatriz() {
   let [filas, columnas] = prompt("Introduce el tamaño de la matriz (ej: 3x3):").split('x');
   document.getElementById('out').textContent = '';
@@ -121,6 +132,7 @@ function tablaMatriz() {
   }
 }
 
+// Limpia la salida y detiene el reloj si estaba activo.
 function limpiar() {
   document.getElementById('out').textContent = '';
   clearInterval(reloj);

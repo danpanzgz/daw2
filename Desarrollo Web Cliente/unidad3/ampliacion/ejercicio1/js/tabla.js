@@ -1,23 +1,23 @@
-let varTablero; //VARIABLE A USAR LUEGO
-let piezas = ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"]; // ARRAY CON LAS PIEZAS ORDENADAS
-let peon = "♙"; // VARIBALE DE PEONES
+// Genera un tablero de ajedrez con piezas en la posición inicial.
+let varTablero; // variable que apunta al elemento HTML del tablero
+let piezas = ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"]; // piezas de la primera fila
+let peon = "♙"; // peón usado en la segunda y séptima fila
 
-/* CREAMOS EL TABLERO */
+// Se ejecuta al cargar la página y crea la estructura del tablero.
 onload = function tablero() {
-  /* REFERIMOS LA TABLA VACÍA EN UNA VARIABLE */
+  // Guarda la referencia a la tabla vacía del documento HTML.
   varTablero = document.getElementById("tablero");
 
-  /* CREA EN LA TABLA 8 FILAS CON DO WHILE */
+  // Genera 8 filas para representar cada línea del tablero.
   for (let filaActual = 0; filaActual < 8; filaActual++) {
-    /* INSERTA CADA FILA DEL TABLERO EN UNA NUEVA VARIABLE FILA: .insertRow(0), .insertRow(1)....*/
+    // Inserta una nueva fila dentro de la tabla.
     let fila = varTablero.insertRow(filaActual);
 
-    /* CREA EN CADA FILA 8 CELDAS. EMPLEA FOR  */
+    // Crea 8 celdas por fila para completar el tablero.
     for (let columnaActual = 0; columnaActual < 8; columnaActual++) {
-      /* INSERTA TODAS LAS CELDAS EN SU CORRESPONDIENTES 8 FILAS (a modo de columnas) .insertCell(0), .insertCell(0)*/
+      // Inserta cada celda en la fila actual.
       let celda = fila.insertCell(columnaActual);
 
-      /* AHORA QUE TENEMOS EL TABLERO CONSTRUIDO DE 8X8; CON INNERHTML Y EMPLEADO SWITCH-CASE RELLENA LAS FILAS 0 Y 7 CON LAS PIEZAS CORRESPONDIENTES Y LAS FILAS 1 Y 6 CON LOS PEONES*/
       switch (filaActual) {
         case 0:
           celda.innerHTML = "<span class='negras'>" + piezas[columnaActual] + "</span>";

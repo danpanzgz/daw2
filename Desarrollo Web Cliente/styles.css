@@ -1,0 +1,136 @@
+/* Estilo reutilizado del proyecto */
+:root {
+  --color-bg: #ffffff;
+  --color-card: #f5f7fb;
+  --color-primary: #0366d6;
+  --color-primary-hover: #0256b4;
+  --color-text: #111111;
+  --color-muted: #6b7280;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --max-width-container: 900px;
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --transition-fast: 0.2s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+  padding: var(--spacing-lg);
+}
+
+h1 {
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.75rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+p {
+  color: var(--color-text);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: 20px 0;
+}
+
+button,
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), transform 0.1s ease;
+}
+
+button:hover,
+.button-link:hover {
+  background-color: var(--color-primary-hover);
+}
+
+button:active,
+.button-link:active {
+  transform: scale(0.98);
+}
+
+button:focus-visible,
+.button-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.menu-description {
+  margin-bottom: 16px;
+  color: var(--color-muted);
+}
+
+.exercise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.exercise-item {
+  background-color: var(--color-card);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  flex: 1 1 240px;
+  min-width: 220px;
+}
+
+.exercise-item h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.exercise-item p {
+  color: var(--color-muted);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .controls > button,
+  .controls > .button-link,
+  .exercise-list > .exercise-item {
+    flex: 1 1 100%;
+  }
+}

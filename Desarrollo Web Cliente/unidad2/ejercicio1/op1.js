@@ -1,5 +1,8 @@
+// Ejercicios de introducción a JavaScript.
+// Cada función pide datos al usuario y muestra el resultado en el elemento #out.
 function out(text) { document.getElementById('out').textContent = text }
 
+// 1. Nombre completo y cálculo del año de nacimiento.
 function ej1() {
   const nombre = prompt('Nombre:');
   const apellido = prompt('Primer apellido:');
@@ -10,18 +13,21 @@ function ej1() {
   out('Nombre completo: ' + nombreCompleto + '\nAño de nacimiento: ' + año);
 }
 
+// 2. Cálculo de la función exponencial e^x.
 function ej2() {
   const value = Number(prompt('Introduce x para calcular e^x:'));
   if (Number.isNaN(value)) return out('numero no valido');
   out('e^' + value + ' = ' + Math.exp(value));
 }
 
+// 3. Comprobación de si un número es par o impar.
 function ej3() {
   const num = Number(prompt('Introduce un numero:'));
   if (Number.isNaN(num)) return out('numero no valido');
   out(num + ' es ' + (num % 2 === 0 ? 'par' : 'impar'));
 }
 
+// 4. Verifica si un número es múltiplo de otro.
 function ej4() {
   const num = Number(prompt('numero principal:'));
   const divisor = Number(prompt('multiplo de: '));
@@ -30,11 +36,13 @@ function ej4() {
   out(num + ' ' + (isMultiple ? 'es' : 'no es') + ' multiplo de ' + divisor);
 }
 
+// 5. Muestra el listado de meses del año.
 function ej5() {
   const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
   out(meses.join('\n'));
 }
 
+// 6. Compara dos enteros y analiza su signo.
 function ej6() {
   const num1 = Number(prompt('Primer entero:'));
   const num2 = Number(prompt('Segundo entero:'));
@@ -44,6 +52,7 @@ function ej6() {
   out('Mayor: ' + larger + '\n' + comparar(num1) + ', ' + comparar(num2));
 }
 
+// 7. Genera una secuencia numérica del 1 al 30.
 function ej7() {
   let numeros = [];
   
@@ -54,6 +63,7 @@ function ej7() {
   out(numeros.join(', '));
 }
 
+// 8. Calcula el factorial de un número.
 function ej8() {
   const number = Number(prompt('numero para factorial:'));
   if (Number.isNaN(number) || number < 0) return out('numero no valido');
@@ -62,6 +72,7 @@ function ej8() {
   out('Factorial de ' + number + ' = ' + factorial);
 }
 
+// 9. Convierte una ciudad introducida en un mensaje concreto.
 function ej9() {
   const cityName = (prompt('Introduce una ciudad (Zaragoza, Barcelona, Madrid):') || '').trim().toLowerCase();
   let message = 'Ciudad no reconocida';

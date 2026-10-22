@@ -1,9 +1,11 @@
+// Práctica de validación y cálculo con DNI y tablas de multiplicación.
 const abcedario = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
 
 function out(text) {
   document.getElementById('out').textContent = text;
 }
 
+// Calcula la nota final según la media y los requisitos mínimos de cada parte.
 function calcularNota() {
   const NotaProyecto = Number(prompt('Introduce la nota del proyecto (0-10):'));
   const NotaExamen = Number(prompt('Introduce la nota del examen (0-10):'));
@@ -39,10 +41,12 @@ function calcularNota() {
   );
 }
 
+// Devuelve la letra asociada a un número de DNI según el algoritmo oficial.
 function calcularLetraDni(numero) {
   return abcedario[numero % abcedario.length];
 }
 
+// Valida un DNI completo con número y letra.
 function validarDni() {
   const numeroIntroducido = prompt('Número de DNI:');
   const letraIntroducida = prompt('Letra de DNI:');
@@ -76,6 +80,7 @@ function validarDni() {
   out('DNI correcto: ' + numero + letraNormalizada);
 }
 
+// Genera la tabla de multiplicar usando un bucle for.
 function tablaMultiplicar() {
     let resultado = 'TABLA DE MULTIPLICAR DEL 7\n';
     for (let i = 1; i <= 10; i++) {
@@ -84,6 +89,7 @@ function tablaMultiplicar() {
     return resultado;
 }
 
+// Genera la tabla de sumar usando un bucle while.
 function tablaSumar() {
     let resultado = 'TABLA DE SUMAR DEL 8\n';
     let i = 1;
@@ -94,6 +100,7 @@ function tablaSumar() {
     return resultado;
 }
 
+// Genera la tabla de dividir usando un do...while.
 function tablaDividir() {
     let resultado = 'TABLA DE DIVIDIR DEL 9\n';
     let i = 1;
@@ -104,6 +111,7 @@ function tablaDividir() {
     return resultado;
 }
 
+// Muestra ejemplos prácticos del uso de desplazamientos de bits.
 function operacionesBits() {
     // 125 / 8  => 8 es 2^3, por lo tanto se desplaza 3 bits a la derecha (125 >> 3)
     const res1 = 125 >> 3;
@@ -125,6 +133,7 @@ function operacionesBits() {
     };
 }
 
+// Reúne todas las tablas y operaciones para mostrarlas en la salida.
 function mostrarOperaciones() {
     const bits = operacionesBits();
     const salida =
