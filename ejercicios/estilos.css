@@ -1,0 +1,125 @@
+:root {
+    color-scheme: light;
+    font-family: system-ui, sans-serif;
+    color: #1e293b;
+    background: #f1f5f9;
+}
+
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    color: #17365d;
+}
+
+nav, .explicacion, .resultado, .tarjeta {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: .5rem;
+    background: white;
+    box-shadow: 0 1px 4px #00000015;
+}
+
+.explicacion {
+    border-left: 4px solid #2c6eaa;
+}
+
+a {
+    color: #155e9a;
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: .75rem;
+}
+
+.tarjeta {
+    display: block;
+    text-decoration: none;
+}
+
+.tarjeta:hover {
+    outline: 2px solid #2c6eaa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #cbd5e1;
+    padding: .45rem .65rem;
+    text-align: left;
+}
+
+th {
+    background: #e2e8f0;
+}
+
+pre, code {
+    background: #e2e8f0;
+    padding: .2rem .35rem;
+    border-radius: .25rem;
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: .75rem;
+    margin: 1rem 0;
+}
+
+label {
+    display: grid;
+    gap: .25rem;
+}
+
+input, select, button {
+    font: inherit;
+    padding: .45rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+.dados button {
+    border: 1px solid #cbd5e1;
+    border-radius: .4rem;
+    background: white;
+}
+
+.dados img {
+    display: block;
+    width: 70px;
+    height: auto;
+}
+
+.menor {
+    color: #123b72;
+    background: #dceeff;
+    padding: .75rem;
+}
+
+.mayor {
+    color: #24551d;
+    background: #e4f5df;
+    padding: .75rem;
+}
