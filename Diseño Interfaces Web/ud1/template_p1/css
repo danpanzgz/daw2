@@ -1,0 +1,316 @@
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 60px;
+    background-color: #f4f7f6 !important;
+    color: #333;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.w3-top {
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.custom-navbar {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+
+    background-color: #000000 !important;
+    background-image: none !important;
+
+    color: #ffffff !important;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Enlaces y botones */
+
+.custom-navbar a,
+.custom-navbar button {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+.custom-navbar a:hover,
+.custom-navbar button:hover {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+
+/* Evita que W3.CSS ponga el botón del dropdown en gris */
+
+.custom-navbar .w3-dropdown-hover:hover > .w3-button:first-child {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+
+/* Cuenta a la derecha */
+
+.custom-navbar .account-link {
+    margin-left: auto !important;
+}
+
+
+/* Avatar */
+
+.custom-navbar img {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+}
+
+
+/* Menú de notificaciones */
+
+.custom-navbar .w3-dropdown-content {
+    width: 300px !important;
+
+    background-color: #ffffff !important;
+    color: #333333 !important;
+
+    border-radius: 8px !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15) !important;
+
+    overflow: hidden;
+}
+
+.custom-navbar .w3-dropdown-content a {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+.custom-navbar .w3-dropdown-content a:hover {
+    color: #333333 !important;
+    background-color: #f5f5f5 !important;
+}
+
+
+/* Badge */
+
+.custom-navbar .w3-badge {
+    background-color: #f44336 !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.w3-container.w3-content {
+    margin-top: 65px !important;
+}
+
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.w3-card {
+    border: 1px solid #e9eeee !important;
+    border-radius: 10px !important;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05) !important;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.w3-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================
+   BOTÓN PRINCIPAL
+   ========================================= */
+
+.btn-primary {
+    background-color: #2a5298 !important;
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 18px !important;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1e3c72 !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 3px 7px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   BOTÓN SECUNDARIO
+   ========================================= */
+
+.btn-secondary {
+    background-color: #e0e0e0 !important;
+    color: #333333 !important;
+
+    border: none !important;
+    border-radius: 18px !important;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #d3d3d3 !important;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================
+   BARRAS DE PROGRESO
+   ========================================= */
+
+.skill-bg {
+    width: 100%;
+    height: 10px;
+
+    background-color: #e9ecef;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+.skill-fill {
+    height: 100%;
+
+    background-color: #2a5298;
+
+    border-radius: 8px;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================
+   IMÁGENES
+   ========================================= */
+
+.img-rounded {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   ICONOS
+   ========================================= */
+
+.text-indigo {
+    color: #3f51b5 !important;
+}
+
+.text-green {
+    color: #4caf50 !important;
+}
+
+
+/* =========================================
+   GALERÍA
+   ========================================= */
+
+details summary {
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+    color: #555;
+}
+
+
+/* =========================================
+   TEXTAREA
+   ========================================= */
+
+textarea {
+    font-family: "Poppins", sans-serif;
+}
+
+textarea:focus {
+    border-color: #2a5298 !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 55px;
+    }
+
+    .custom-navbar,
+    nav.custom-navbar {
+        min-height: 55px;
+    }
+
+    .custom-navbar .w3-dropdown-content {
+        width: 280px !important;
+        right: 0;
+    }
+
+    .w3-container.w3-content {
+        margin-top: 35px !important;
+    }
+
+    .w3-card {
+        border-radius: 8px !important;
+    }
+}

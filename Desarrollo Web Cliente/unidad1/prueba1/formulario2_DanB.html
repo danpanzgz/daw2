@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejercicio 1-->
+
+    <div>
+        <h2>Resultado:</h2>
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
+        <input type="button" value="/"><br/>
+
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+        <input type="button" value="*"><br/>
+
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <input type="button" value="+"><br/>
+
+        <input type="button" value="0">
+        <input type="button" value="=">
+        <input type="button" value="-">
+    </div>
+    <hr/>
+
+    <!-- Ejercicio 2-->
+   <form action="/registrardatos.php" method="post" enctype="multipart/form-data">
+        <label for="nombre_foto">Ingrese su nombre:</label>
+        <input type="text" id="nombre_foto" name="nombre"><br/>
+
+        <label for="foto">Seleccione la foto:</label>
+        <input type="file" id="foto" name="foto"><br/><br/>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 3-->
+    <form action="/registrardatos.php" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="apellidoynombre">Apellido y nombre:</label>
+            <input type="text" id="apellidoynombre" name="apellidoynombre"><br/>
+
+            <label for="dni">Documento de identidad:</label>
+            <input type="text" id="dni" name="dni"><br/>
+
+            <label for="fnacimiento">Fecha de nacimiento:</label>
+            <input type="text" id="fnacimiento" name="fecha_nacimiento"><br/>
+
+            <label for="dir_pers">Dirección:</label>
+            <input type="text" id="dir_pers" name="direccion_personal">
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos Laborales</legend>
+            <label for="empresa">Nombre de la empresa:</label>
+            <input type="text" id="empresa" name="empresa"><br/>
+
+            <label for="actividad">Actividad:</label>
+            <input type="text" id="actividad" name="actividad"><br/>
+
+            <label for="dir_lab">Dirección:</label>
+            <input type="text" id="dir_lab" name="direccion_laboral">
+        </fieldset><br/>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 4-->
+    <form action="/registrardatos.php" method="post">
+        <label for="nombre_edad">Apellido y nombre:</label>
+        <input type="text" id="nombre_edad" name="apellidoynombre"><br/>
+
+        <p>Es mayor de edad?:</p>
+        <input type="radio" id="es_mayor_si" name="mayor_edad" value="si" checked>
+        <label for="es_mayor_si">Si</label><br/>
+
+        <input type="radio" id="es_mayor_no" name="mayor_edad" value="no">
+        <label for="es_mayor_no">No</label><br/>
+
+        <label for="tel">Telefono:</label>
+        <input type="text" id="tel" name="telefono" value="453-"><br/>
+
+        <label for="comentarios_edad">Ingrese aqui sus comentarios</label><br/>
+        <textarea id="comentarios_edad" name="comentarios" rows="5" cols="50"></textarea><br/><br/>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 5-->
+     <form action="/registrardatos.php" method="post">
+        <!-- Columna 1 -->
+        <input type="text" name="m11" tabindex="1">
+        <!-- Columna 2 -->
+        <input type="text" name="m12" tabindex="4">
+        <!-- Columna 3 -->
+        <input type="text" name="m13" tabindex="7"><br/>
+
+        <!-- Columna 1 -->
+        <input type="text" name="m21" tabindex="2">
+        <!-- Columna 2 -->
+        <input type="text" name="m22" tabindex="5">
+        <!-- Columna 3 -->
+        <input type="text" name="m23" tabindex="8"><br/>
+
+        <!-- Columna 1 -->
+        <input type="text" name="m31" tabindex="3">
+        <!-- Columna 2 -->
+        <input type="text" name="m32" tabindex="6">
+        <!-- Columna 3 -->
+        <input type="text" name="m33" tabindex="9">
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 6-->
+     <form action="/registrardatos.php" method="post">
+        <input type="radio" id="ninos" name="grupo_etario" value="ninos" disabled>
+        <label for="ninos">Niños</label><br/>
+
+        <input type="radio" id="adolescentes" name="grupo_etario" value="adolescentes">
+        <label for="adolescentes">Adolescentes</label><br/>
+
+        <input type="radio" id="mayores" name="grupo_etario" value="mayores">
+        <label for="mayores">Mayores</label>
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 7-->
+     <form action="/registrardatos.php" method="post">
+        <label for="usuario">Nombre de usuario:</label>
+        <input type="text" id="usuario" name="usuario" maxlength="20"><br/>
+
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" name="clave" maxlength="12"><br/><br/>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 8-->
+     <form action="/registrardatos.php" method="post">
+        <label for="empresa_readonly">Nombre de la empresa:</label>
+        <input type="text" id="empresa_readonly" name="empresa" value="Mi empresa" readonly><br/>
+
+        <label for="contrato">Texto del contrato</label><br/>
+        <textarea id="contrato" name="contrato" rows="6" cols="50" readonly>AAAA xdxdxd aaaaa</textarea>
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 9-->
+     <form action="mailto:soporte@ejemplo.com" method="post" enctype="text/plain">
+        <h2>Reclamos</h2>
+        <label for="reclamo_nombre">Ingrese su nombre:</label>
+        <input type="text" id="reclamo_nombre" name="nombre"><br/>
+
+        <label for="reclamo_dir">Ingrese su dirección:</label>
+        <input type="text" id="reclamo_dir" name="direccion"><br/>
+
+        <label for="reclamo_problema">Informe del problema:</label><br/>
+        <textarea id="reclamo_problema" name="problema" rows="5" cols="40"></textarea><br/><br/>
+
+        <input type="submit" value="enviar">
+    </form>
+    <hr/>
+
+    <!-- Ejercicio 10-->
+    <form action="/registrardatos.php" method="post">
+        <fieldset>
+            <legend>Formulario de comentarios</legend>
+
+            <label for="coment_nombre">Ingrese su nombre</label><br/>
+            <input type="text" id="coment_nombre" name="nombre"><br/>
+
+            <label for="coment_mail">Ingrese su mail</label><br/>
+            <input type="email" id="coment_mail" name="mail"><br/>
+
+            <label for="coment_texto">Comentarios</label><br/>
+            <textarea id="coment_texto" name="comentarios" rows="5" cols="40"></textarea><br/><br/>
+
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+
+    <hr/>
+    
+</body>
+</html>

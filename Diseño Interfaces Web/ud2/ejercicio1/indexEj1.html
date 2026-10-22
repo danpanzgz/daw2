@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: historia y ventajas</title>
+    <style>
+        :root {
+            --azul: #1d4ed8;
+            --azul-oscuro: #0f172a;
+            --gris: #475569;
+            --fondo: #eef4ff;
+            --blanco: #ffffff;
+            --naranja: #f97316;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #eef4ff 0%, #f8fafc 100%);
+            color: var(--azul-oscuro);
+            line-height: 1.7;
+        }
+
+        header {
+            background: var(--azul);
+            color: var(--blanco);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 0.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem 2rem;
+        }
+
+        article {
+            background: var(--blanco);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #dbeafe;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--naranja);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p, li {
+            color: var(--gris);
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin: 0.75rem 0 0 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--gris);
+            padding: 1rem 0 2rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS: historia y ventajas</h1>
+        <p>Una introducción breve a la evolución del diseño web y la separación entre contenido y presentación.</p>
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <h2>a) ¿En qué año se creó CSS y quién fue su creador?</h2>
+                <p>CSS nació en <strong>1994</strong> y fue ideado por <strong>Håkon Wium Lie</strong>, con la colaboración inicial de Bert Bos. Su objetivo era controlar la apariencia de páginas web de una forma más organizada y estandarizada.</p>
+            </section>
+
+            <section>
+                <h2>b) ¿Por qué surgió la necesidad de separar el contenido HTML del diseño CSS?</h2>
+                <p>Antes de CSS, el HTML se usaba tanto para estructurar la información como para definir su estilo, lo que hacía el código más difícil de mantener y reutilizar. La separación permitió mejorar la legibilidad, facilitar la actualización visual del sitio y crear páginas más consistentes y accesibles.</p>
+            </section>
+
+            <section>
+                <h2>c) ¿Qué mejoras trajo consigo CSS3 respecto a versiones anteriores?</h2>
+                <p>CSS3 introdujo módulos independientes, mejoras visuales y nuevas capacidades como gradientes, sombras, bordes redondeados, transiciones, animaciones, columnas, tipografías personalizadas y consultas de medios. Esto hizo posible diseñar interfaces mucho más modernas sin depender de tecnologías externas.</p>
+            </section>
+
+            <section>
+                <h2>d) ¿Qué ventajas ofrece CSS3 para diseñar interfaces modernas?</h2>
+                <p>CSS3 ofrece una gran flexibilidad para crear diseños responsivos, atractivos y fáciles de adaptar a distintos dispositivos. Además, mejora la experiencia de usuario, reduce la repetición de código, permite más consistencia visual y facilita la creación de páginas con mejor apariencia profesional.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Ejercicio 1 desarrollado con HTML semántico y CSS embebido.</p>
+    </footer>
+</body>
+</html>

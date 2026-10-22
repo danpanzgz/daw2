@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>DevNet - Portfolio DAW</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<style>
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 60px;
+    background-color: #f4f7f6 !important;
+    color: #333;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.w3-top {
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.custom-navbar {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+
+    background-color: #000000 !important;
+    background-image: none !important;
+
+    color: #ffffff !important;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Enlaces y botones */
+
+.custom-navbar a,
+.custom-navbar button {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+.custom-navbar a:hover,
+.custom-navbar button:hover {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+
+/* Corregir el hover del dropdown de W3.CSS */
+
+.custom-navbar .w3-dropdown-hover:hover > .w3-button:first-child {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+}
+
+
+/* Cuenta a la derecha */
+
+.custom-navbar .account-link {
+    margin-left: auto !important;
+}
+
+
+/* Avatar */
+
+.custom-navbar img {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+}
+
+
+/* Menú de notificaciones */
+
+.custom-navbar .w3-dropdown-content {
+    width: 300px !important;
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.custom-navbar .w3-dropdown-content a {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+.custom-navbar .w3-dropdown-content a:hover {
+    color: #333333 !important;
+    background-color: #f2f2f2 !important;
+}
+
+
+/* Badge */
+
+.custom-navbar .w3-badge {
+    background-color: #f44336 !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.w3-container.w3-content {
+    margin-top: 40px !important;
+}
+
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.w3-card {
+    border: none !important;
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.w3-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================
+   BOTÓN PRINCIPAL
+   ========================================= */
+
+.btn-primary {
+    background-color: #2a5298 !important;
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 20px !important;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1e3c72 !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   BOTÓN SECUNDARIO
+   ========================================= */
+
+.btn-secondary {
+    background-color: #e0e0e0 !important;
+    color: #333333 !important;
+
+    border: none !important;
+    border-radius: 20px !important;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #d0d0d0 !important;
+
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   BARRAS DE PROGRESO
+   ========================================= */
+
+.skill-bg {
+    width: 100%;
+    height: 12px;
+
+    background-color: #e9ecef;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+.skill-fill {
+    height: 100%;
+
+    background-color: #2a5298;
+
+    border-radius: 10px;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================
+   IMÁGENES
+   ========================================= */
+
+.img-rounded {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   COLORES DE ICONOS
+   ========================================= */
+
+.text-indigo {
+    color: #3f51b5 !important;
+}
+
+.text-green {
+    color: #4caf50 !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 55px;
+    }
+
+    .custom-navbar,
+    nav.custom-navbar {
+        min-height: 55px;
+    }
+
+    .custom-navbar .w3-dropdown-content {
+        width: 280px !important;
+        right: 0;
+    }
+
+    .w3-container.w3-content {
+        margin-top: 20px !important;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <nav class="custom-navbar w3-large">
+
+        <a href="#" class="w3-button w3-padding-large">
+            <i class="fa fa-code w3-margin-right"></i>
+            <b>DevNet</b>
+        </a>
+
+        <a href="#" class="w3-button w3-padding-large w3-hide-small" title="Proyectos">
+            <i class="fa fa-laptop"></i>
+            Portafolio
+        </a>
+
+        <a href="#" class="w3-button w3-padding-large w3-hide-small" title="Ajustes">
+            <i class="fa fa-cog"></i>
+        </a>
+
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notificaciones">
+                <i class="fa fa-bell"></i>
+                <span
+                    class="w3-badge w3-small w3-red"
+                    style="position:absolute;top:5px;right:10px;"
+                >3</span>
+            </button>
+
+            <div
+                class="w3-dropdown-content w3-card-4 w3-bar-block"
+                style="width:300px; border-radius:8px;"
+            >
+                <a href="#" class="w3-bar-item w3-button">
+                    <i class="fa fa-check text-green"></i>
+                    Tarea 01_01 DIW Corregida
+                </a>
+
+                <a href="#" class="w3-bar-item w3-button">
+                    <i class="fa fa-github"></i>
+                    Nuevo push en tu repositorio
+                </a>
+
+                <a href="#" class="w3-bar-item w3-button">
+                    <i class="fa fa-envelope"></i>
+                    Mensaje del profesor
+                </a>
+            </div>
+        </div>
+
+        <a
+            href="#"
+            class="w3-button w3-padding-large w3-hide-small account-link"
+            title="Mi Cuenta"
+        >
+            <img
+                src="https://i.pravatar.cc/150?img=11"
+                class="w3-circle"
+                alt="Avatar"
+            >
+        </a>
+
+    </nav>
+</div>
+
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+  <!-- Main Grid -->
+  <div class="w3-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+
+    <!-- Left Column -->
+    <aside>
+      <!-- Profile -->
+      <div class="w3-card w3-white w3-padding-16">
+        <div class="w3-container">
+          <p class="w3-center">
+            <img src="https://i.pravatar.cc/300?img=11" class="w3-circle" style="height:120px;width:120px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Avatar">
+          </p>
+          <h4 class="w3-center"><b>Carlos Developer</b></h4>
+          <p class="w3-center w3-text-grey" style="font-size: 14px;">Estudiante DAW - 2º Año</p>
+          <hr>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-text-indigo"></i>Buscando prácticas</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-indigo"></i>Madrid, España</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-text-indigo"></i>carlos.dev@educa.es</p>
+        </div>
+      </div>
+      <br>
+
+      <!-- Skills (Sección Nueva) -->
+      <div class="w3-card w3-white w3-padding-16">
+        <div class="w3-container">
+          <h5><i class="fa fa-star fa-fw w3-margin-right w3-text-indigo"></i>Mis Habilidades</h5>
+          <p>HTML & CSS</p>
+          <div class="skill-bg">
+            <div class="skill-fill" style="width:90%"></div>
+          </div>
+          <p>JavaScript / DOM</p>
+          <div class="skill-bg">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
+          <p>PHP & MySQL</p>
+          <div class="skill-bg">
+            <div class="skill-fill" style="width:65%"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Accordion Modificado con fotos reales -->
+      <div class="w3-card w3-white">
+        <details open>
+          <summary class="w3-button w3-block w3-left-align btn-secondary">
+            <i class="fa fa-folder-open fa-fw w3-margin-right"></i>Galería de Proyectos
+          </summary>
+          <div class="w3-container w3-padding-16">
+            <div class="w3-grid" style="grid-template-columns:1fr 1fr;gap:10px">
+              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=300&q=80" alt="Código HTML" class="img-rounded" style="width:100%; height: 100px; object-fit: cover;">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80" alt="Diseño web" class="img-rounded" style="width:100%; height: 100px; object-fit: cover;">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="Setup" class="img-rounded" style="width:100%; height: 100px; object-fit: cover;">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" alt="Laptop" class="img-rounded" style="width:100%; height: 100px; object-fit: cover;">
+            </div>
+          </div>
+        </details>
+      </div>
+      <br>
+    </aside>
+
+    <!-- Middle Column -->
+    <main>
+      <!-- Status -->
+      <div class="w3-card w3-white w3-margin-bottom">
+        <div class="w3-container w3-padding">
+          <h6 class="w3-opacity">¿En qué estás trabajando hoy?</h6>
+          <textarea class="w3-border w3-padding w3-round" style="width:100%; resize:none; outline:none;" rows="2" placeholder="Comparte tus avances en código..."></textarea>
+          <div class="w3-margin-top">
+            <button type="button" class="w3-button btn-primary w3-right">
+              <i class="fa fa-paper-plane"></i> Publicar
+            </button>
+            <button type="button" class="w3-button w3-text-grey"><i class="fa fa-image"></i></button>
+            <button type="button" class="w3-button w3-text-grey"><i class="fa fa-code"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 1 (Actualizado) -->
+      <article class="w3-container w3-card w3-white w3-margin-bottom w3-padding-16">
+        <img src="https://i.pravatar.cc/150?img=11" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
+        <span class="w3-right w3-opacity" style="font-size:12px;">Hace 10 min</span>
+        <h5 style="margin-bottom:0;">Carlos Developer</h5>
+        <span class="w3-opacity" style="font-size:12px;">#DIW #Frontend</span>
+        <hr class="w3-clear" style="margin: 10px 0;">
+        
+        <p>Acabo de aplicar CSS personalizado a mi plantilla. He cambiado la tipografía a <b>Poppins</b> importada de Google Fonts, añadí un fondo degradado al menú superior y redondeé los bordes de las tarjetas para darle un aspecto más moderno (estilo Material UI/Apple). ¡El cambio visual es brutal! 🚀💻</p>
+        
+        <div class="w3-margin-bottom">
+          <button type="button" class="w3-button btn-secondary w3-small">
+            <i class="fa fa-thumbs-up text-indigo"></i> 12 Likes
+          </button>
+          <button type="button" class="w3-button btn-secondary w3-small">
+            <i class="fa fa-comment"></i> 3 Comentarios
+          </button>
+        </div>
+      </article>
+
+      <!-- Post 2 (Nuevo con Imagen Gigante) -->
+      <article class="w3-container w3-card w3-white w3-margin-bottom w3-padding-16">
+        <img src="https://i.pravatar.cc/150?img=32" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
+        <span class="w3-right w3-opacity" style="font-size:12px;">Ayer</span>
+        <h5 style="margin-bottom:0;">Ana Frontend (Compañera de DAW)</h5>
+        <span class="w3-opacity" style="font-size:12px;">#Setup #Coding</span>
+        <hr class="w3-clear" style="margin: 10px 0;">
+        
+        <p>Estudiando para el examen de la Unidad 1. Os comparto una foto de mi setup actual mientras hago esquemas de Wireframes y Mockups. ☕📚</p>
+        
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Setup de programación" style="width:100%; border-radius: 8px; margin-bottom:15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        
+        <div class="w3-margin-bottom">
+          <button type="button" class="w3-button btn-primary w3-small">
+            <i class="fa fa-thumbs-up"></i> Me gusta
+          </button>
+          <button type="button" class="w3-button btn-secondary w3-small">
+            <i class="fa fa-comment"></i> Comentar
+          </button>
+        </div>
+      </article>
+    </main>
+
+    <!-- Right Column -->
+    <aside>
+      <!-- Widget Próxima Entrega -->
+      <div class="w3-card w3-white w3-center w3-padding-16">
+        <div class="w3-container">
+          <h5 class="w3-text-indigo"><b>Próximo Evento</b></h5>
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" alt="Aula" style="width:100%; border-radius: 8px; margin-bottom: 10px;">
+          <p><b>Entrega Tarea 01_01 DIW</b></p>
+          <p class="w3-text-grey"><i class="fa fa-calendar"></i> Viernes 23:59h</p>
+          <button class="w3-button btn-primary w3-block">Subir Tarea</button>
+        </div>
+      </div>
+      <br>
+
+      <!-- Widget Compañeros (Nuevo) -->
+      <div class="w3-card w3-white w3-padding-16">
+        <div class="w3-container">
+          <h5><i class="fa fa-users w3-text-indigo"></i> Compañeros DAW</h5>
+          <ul class="w3-ul w3-hoverable" style="border:none;">
+            <li class="w3-padding-small" style="border-bottom:none; display:flex; align-items:center;">
+              <img src="https://i.pravatar.cc/150?img=47" class="w3-circle" style="width:35px; margin-right:10px;">
+              <span>Laura Gómez</span>
+              <button class="w3-button w3-tiny btn-secondary" style="margin-left:auto;"><i class="fa fa-plus"></i></button>
+            </li>
+            <li class="w3-padding-small" style="border-bottom:none; display:flex; align-items:center;">
+              <img src="https://i.pravatar.cc/150?img=59" class="w3-circle" style="width:35px; margin-right:10px;">
+              <span>Marcos Ruiz</span>
+              <button class="w3-button w3-tiny btn-secondary" style="margin-left:auto;"><i class="fa fa-plus"></i></button>
+            </li>
+            <li class="w3-padding-small" style="border-bottom:none; display:flex; align-items:center;">
+              <img src="https://i.pravatar.cc/150?img=33" class="w3-circle" style="width:35px; margin-right:10px;">
+              <span>Elena Torres</span>
+              <button class="w3-button w3-tiny btn-secondary" style="margin-left:auto;"><i class="fa fa-plus"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br>
+    </aside>
+
+  </div>
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-center" style="background-color: #1e3c72; color: white;">
+  <h4>Proyecto DIW - Diseño de Interfaces Web</h4>
+  <p>Demostración de personalización avanzada de HTML y CSS.</p>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-github w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Construido modificando <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-light-grey">W3.CSS</a></p>
+</footer>
+
+</body>
+</html>

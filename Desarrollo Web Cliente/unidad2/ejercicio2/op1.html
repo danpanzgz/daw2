@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>OP1 - DWEC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef4ff;
+      margin: 0;
+      padding: 30px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+    section {
+      border: 1px solid #dfe8ff;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 20px;
+      background: #f9fbff;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+      margin-right: 12px;
+      margin-bottom: 10px;
+    }
+    pre {
+      background: #f3f4f6;
+      border-radius: 8px;
+      padding: 16px;
+      white-space: pre-wrap;
+      min-height: 150px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unidad 2 - Ejercicios integrados</h1>
+
+    <section>
+      <h2>1. Nota de la primera evaluación</h2>
+      <button onclick="calcularNota()">Calcular nota</button>
+    </section>
+
+    <section>
+      <h2>2. Validación del DNI</h2>
+      <button onclick="validarDni()">Comprobar DNI</button>
+    </section>
+
+    <section>
+      <h2>3. Operaciones con bucles</h2>
+      <button onclick="mostrarOperaciones()">Mostrar operaciones</button>
+    </section>
+
+    <pre id="out">Aquí aparecerá el resultado de la operación seleccionada.</pre>
+  </div>
+
+  <script src="op1.js"></script>
+</body>
+</html>

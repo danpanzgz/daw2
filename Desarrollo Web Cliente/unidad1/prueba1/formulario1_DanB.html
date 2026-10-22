@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <form action="/registrardatos.php" method="get">
+        <!-- ejercicio 1 -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br/>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br/>
+
+        Seleccione los lenguajes que conoce:<br/>
+        <input type="checkbox" id="java" name="lenguajes[]" value="java">
+        <label for="java">Java</label><br/>
+
+        <input type="checkbox" id="c++" name="lenguajes[]" value="c++">
+        <label for="c++">C++</label><br/>
+        
+        <input type="checkbox" id="C" name="lenguajes[]" value="C">
+        <label for="C">C</label><br/>
+
+        <input type="checkbox" id="C#" name="lenguajes[]" value="C#">
+        <label for="C#">C#</label><br/>
+
+        <!-- ejercicio 2 -->
+        <form action="/registrardatos.php" method="get">
+        <br/>
+        mail: 
+        <br/>
+        <textarea type="email" rows="5" cols="40" name="email" required></textarea>
+        <br/>
+        <br/>
+
+        <!-- ejercicio 3 -->
+        <formulario action="/registrardatos.php" method="get">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br/>
+
+            Seleccione su maximo nivel de estudios:<br/>
+            <input type="radio" id="sin_estudios" name="estudios" value="sin_estudios">
+            <label for="sin_estudios">Sin estudios</label><br/>
+            <input type="radio" id="primario" name="estudios" value="primario">
+            <label for="primario">Primario</label><br/>
+            <input type="radio" id="secundario" name="estudios" value="secundario">
+            <label for="secundario">Secundario</label><br/>
+            <input type="radio" id="universitario" name="estudios" value="universitario">
+            <label for="universitario">Universitario</label><br/>
+        </form>
+        <br/>
+
+        <!-- ejercicio 4 -->
+        <select name="" id="">
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+            <option value="azul">Azul</option>
+            <option value="amarillo">Amarillo</option>
+        </select>
+        <br/>
+        <br/>
+
+        <!-- ejercicio 5 -->
+        <select name="" id="">
+            <optgroup label="Frutas">
+                <option value="naranja">Naranja</option>
+                <option value="manzana">Manzanas</option>
+                <option value="frutilla">Frutillas</option>
+                <option value="durazno">Duraznos</option>
+                <option value="ciruela">Ciruelas</option>
+            </optgroup>
+            <optgroup label="Verduras">
+                <option value="tomate">Tomates</option>
+                <option value="lechuga">Lechugas</option>
+                <option value="papa">Papas</option>
+                <option value="cebolla">Cebollas</option>
+                <option value="zapallo">Zapallos</option>
+            </optgroup>
+        </select>
+        <br/>
+        <br/>
+
+        <input type="submit" value="Enviar"> 
+        <br/>
+        <br/>
+
+    </form>
+    
+</body>
+</html>
