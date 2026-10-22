@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="repaso2.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Repaso 2</h1>
+      <div class="controls">
+        <button onclick="iniciarReloj()">Reloj Digital</button>
+        <button onclick="objetoString()">Objeto String</button>
+        <button onclick="pantallaAnterior()">Pantalla Anterior</button>
+        <button onclick="abrePopup()">Abrir Popup</button>
+        <button onclick="bucleMultipleTres()">Múltiplos de Tres</button>
+        <button onclick="mostrarMayorMenor()">Mostrar Mayor y Menor</button>
+        <button onclick="identificarTalla()">Identificar Talla</button>
+        <button onclick="calcularLongitudCircumferencia()">Calcular Longitud de Circunferencia</button>
+        <button onclick="puestaEuromillones()">Puesta Euromillones</button>
+        <button onclick="tablaMatriz()">Tabla Matriz</button>
+        <button onclick="toggleCalculadora()">Calculadora</button>
+      </div>
+      <pre id="out"></pre>
+
+  <div id="calculadora" style="display:none;">
+    <input type="text" id="resultadoAnterior" readonly><br>
+    <input type="text" id="display" value="0" readonly><br>
+
+    <input type="button" value="C" onclick="calculadora.borrar()">
+    <input type="button" value="√" onclick="calculadora.raiz()">
+    <input type="button" value="/" onclick="calculadora.operar('/')">
+    <input type="button" value="*" onclick="calculadora.operar('*')"><br>
+
+    <input type="button" value="7" onclick="calculadora.numero('7')">
+    <input type="button" value="8" onclick="calculadora.numero('8')">
+    <input type="button" value="9" onclick="calculadora.numero('9')">
+    <input type="button" value="-" onclick="calculadora.operar('-')"><br>
+
+    <input type="button" value="4" onclick="calculadora.numero('4')">
+    <input type="button" value="5" onclick="calculadora.numero('5')">
+    <input type="button" value="6" onclick="calculadora.numero('6')">
+    <input type="button" value="+" onclick="calculadora.operar('+')"><br>
+
+    <input type="button" value="1" onclick="calculadora.numero('1')">
+    <input type="button" value="2" onclick="calculadora.numero('2')">
+    <input type="button" value="3" onclick="calculadora.numero('3')">
+    <input type="button" value="=" onclick="calculadora.calcular()"><br>
+
+    <input type="button" value="0" onclick="calculadora.numero('0')" style="width: 120px;">
+  </div>
+
+  <script>
+    function calculadora() {
+      let valor = '';
+      let operacion = '';
+      let anterior = '';
+
+      function actualizar() {
+        document.getElementById('display').value = valor || '0';
+        document.getElementById('resultadoAnterior').value = anterior;
+      }
+
+      function numero(n) {
+        if (valor === '0') valor = '';
+        valor += n;
+        actualizar();
+      }
+
+      function operar(op) {
+        if (valor === '') return;
+        if (operacion) calcular();
+
+        anterior = valor + ' ' + op;
+        operacion = op;
+        valor = '';
+        actualizar();
+      }
+
+      function calcular() {
+        if (!operacion || valor === '') return;
+
+        let a = Number(anterior.split(' ')[0]);
+        let b = Number(valor);
+        let resultado = 0;
+
+        if (operacion === '+') resultado = a + b;
+        if (operacion === '-') resultado = a - b;
+        if (operacion === '*') resultado = a * b;
+        if (operacion === '/') resultado = b === 0 ? 'Error' : a / b;
+
+        anterior = a + ' ' + operacion + ' ' + b + ' =';
+        valor = String(resultado);
+        operacion = '';
+        actualizar();
+      }
+
+      function raiz() {
+        if (valor === '') return;
+        anterior = '√(' + valor + ')';
+        valor = String(Math.sqrt(Number(valor)));
+        operacion = '';
+        actualizar();
+      }
+
+      function borrar() {
+        valor = '';
+        operacion = '';
+        anterior = '';
+        actualizar();
+      }
+
+      return { numero, operar, calcular, raiz, borrar };
+    }
+
+    const calc = calculadora();
+
+    function toggleCalculadora() {
+      const caja = document.getElementById('calculadora');
+      caja.style.display = caja.style.display === 'none' ? 'block' : 'none';
+    }
+
+    window.calculadora = calc;
+  </script>
+
+      <button onclick="limpiar()">Limpiar</button>
+    </div>
+  </body>
+</html>
