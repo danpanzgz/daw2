@@ -1,0 +1,158 @@
+:root{
+    color-scheme: light;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #202b3c;
+    background: #f3f6fc;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: min(90%, 1100px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 48px 0;
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(83, 123, 255, 0.12), transparent 55%),
+        #f3f6fc;
+    color: #202b3c;
+    font-family: inherit;
+}
+
+.box,
+.resultado{
+    margin: 18px 0;
+    padding: 24px;
+    border: 1px solid #e0e7f1;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 30px rgba(31, 48, 79, 0.07);
+}
+
+.box h2{
+    margin: 0 0 12px;
+    color: #3458d4;
+}
+
+hr{
+    height: 2px;
+    border: 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #5578ed, #a9baff, transparent);
+}
+
+form{
+    width: min(100%, 440px);
+    margin: 7vh auto;
+}
+
+form fieldset{
+    padding: 30px;
+    border: 1px solid #e0e7f1;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 50px rgba(31, 48, 79, 0.12);
+    color: #4b5870;
+    line-height: 1.5;
+}
+
+form input[type="password"],
+form input[type="text"],
+form input[type="number"],
+form select{
+    display: block;
+    width: 100%;
+    margin: 8px 0 20px;
+    padding: 13px 14px;
+    border: 1px solid #d8e0ed;
+    border-radius: 9px;
+    background: #fbfcff;
+    color: #202b3c;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+form input[type="password"]:focus,
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus{
+    border-color: #5578ed;
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(85, 120, 237, 0.15);
+}
+
+form label{
+    display: block;
+    color: #4b5870;
+    font-weight: 600;
+}
+
+form input[type="submit"]{
+    width: 100%;
+    margin-top: 2px;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #5578ed, #3458d4);
+    box-shadow: 0 6px 14px rgba(52, 88, 212, 0.22);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+form input[type="submit"]:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 9px 18px rgba(52, 88, 212, 0.3);
+}
+
+form input[type="submit"]:focus-visible{
+    outline: 3px solid rgba(52, 88, 212, 0.35);
+    outline-offset: 3px;
+}
+
+.access-result{
+    width: min(100%, 560px);
+    margin: 7vh auto;
+    padding: 28px;
+    border: 1px solid #e0e7f1;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 50px rgba(31, 48, 79, 0.12);
+    text-align: center;
+}
+
+.access-message{
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.access-denied,
+.access-error{
+    color: #c62828;
+}
+
+.access-granted{
+    color: #21834a;
+}
+
+.access-result a{
+    color: #3458d4;
+    font-weight: 600;
+}
+
+@media (max-width: 480px){
+    body{
+        width: min(92%, 1100px);
+        padding: 24px 0;
+    }
+
+    form fieldset{
+        padding: 22px;
+    }
+}
