@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero automático</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cajero">
+    <h1>Cajero</h1>
+    <div id="pantalla" class="pantalla">Introduce tu PIN</div>
+
+    <!-- Pantalla de acceso -->
+    <section id="login">
+      <input type="password" id="entrada" class="entrada" placeholder="PIN" readonly>
+      <div class="teclado">
+        <button class="tecla">1</button>
+        <button class="tecla">2</button>
+        <button class="tecla">3</button>
+        <button class="tecla">4</button>
+        <button class="tecla">5</button>
+        <button class="tecla">6</button>
+        <button class="tecla">7</button>
+        <button class="tecla">8</button>
+        <button class="tecla">9</button>
+        <button id="borrar" class="accion rojo">C</button>
+        <button class="tecla">0</button>
+        <button id="validar" class="accion verde">OK</button>
+      </div>
+    </section>
+
+    <!-- Menú del cajero -->
+    <section id="menu" hidden>
+      <button id="btnSaldo" class="opcion">Consultar saldo</button>
+
+      <div class="retirada">
+        <input type="number" id="importe" class="entrada" placeholder="Importe (€)" min="1">
+        <button id="btnSacar" class="opcion">Sacar dinero</button>
+      </div>
+
+      <button id="btnSalir" class="opcion salir">Salir</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
