@@ -1,0 +1,92 @@
+
+/* Ejercicio 1 */
+
+section > ul > li:first-child {
+    color: red;
+}
+
+section > ul > li:nth-child(odd) {
+    font-style: italic;
+}
+
+/* Ejercicio 2 */
+
+.decorado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.decorado::before,
+.decorado::after {
+    content: "";
+    display: inline-block;
+    width: 2em;
+    height: 2px;
+    background: black;
+}
+
+/* Ejercicio 3 */
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul a:hover {
+    background: rgb(204, 203, 203);
+}
+
+/* Ejercicio 4 */
+
+.absoluto {
+    width: 300px;
+    height: 150px;
+    font-size: 16px;
+    background: rgb(224, 215, 215);
+}
+
+.relativo {
+    width: 80%;
+    height: 20%;
+    font-size: 1.25rem;
+    background: rgb(190, 192, 188);
+}
+
+/* Ejercicio 5 */
+
+input[type="email"],
+input[type="password"] {
+    background: rgb(218, 218, 218);
+    border-radius: 5px;
+}
+
+/* Ejercicio 6 */
+
+.producto {
+    position: relative;
+    width: 300px;
+}
+
+.producto img {
+    width: 100%;
+}
+
+.producto.nuevo::after {
+    content: "Novedad";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    background: rgb(240, 52, 52);
+    color: rgb(224, 215, 215);
+}

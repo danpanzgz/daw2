@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIOS FORMULARIOS 1.3</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="nombre">Ingrese su nombre:</label>
+      <input type="text" name="nombre" id="nombre" />
+      <br />
+
+      <label
+        >Seleccione el nivel de estudios que tiene:
+        <div>
+          <input
+            type="radio"
+            name="estudios"
+            value="sin_estudios"
+            id="sin_estudios"
+          />
+          <label for="sin_estudios">Sin estudios</label>
+        </div>
+        <div>
+          <input type="radio" name="estudios" value="primario" id="primario" />
+          <label for="primario">Primario</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="estudios"
+            value="secundario"
+            id="secundario"
+          />
+          <label for="secundario">Secundario</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="estudios"
+            value="universitario"
+            id="universitario"
+          />
+          <label for="universitario">Universitario</label>
+        </div>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

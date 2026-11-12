@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css?v2">
 </head>
 <body>
     <form name="formulario">
         <textarea name="mitexto" placeholder="Introduce una frase" cols="30" rows="5"></textarea>
         <br>
-        <input type="button" value="clickear" onclick="pulsar()"></input>
+        <input type="button" value="clickear" onclick="pulsar()">
     </form>
     <div id="palabras"></div>
     <div id="calificaciones"></div>
 <script>
+
     /* Para el div palabras: 
     - Calcula y muestra el numero de palabras que están escritas en el textarea
     - Muestra la ultima y la primera palabra del textarea
@@ -34,6 +36,118 @@
 
     NOTA1: Emplea siempre que se pueda metodos y propiedades del objeto Array
     NOTA2: Emplea if, for, for-in, for-of, do-while, while... */
+    
+    /* Ejercicio 1: div palabras */
+    function pulsar() {
+        var texto = document.forms["formulario"].mitexto.value;
+        var palabras = texto.trim() === "" ? [] : texto.trim().split(/\s+/);
+        var divPalabras = document.getElementById("palabras");
+
+        divPalabras.innerHTML = "<strong>Ejercicio 1 - Palabras</strong><br>";
+        divPalabras.innerHTML += "Número de palabras: " + palabras.length + "<br>";
+
+        if (palabras.length > 0) {
+            divPalabras.innerHTML += "Primera palabra: " + palabras[0] + "<br>";
+            divPalabras.innerHTML += "Última palabra: " + palabras[palabras.length - 1] + "<br>";
+        } else {
+            divPalabras.innerHTML += "Primera palabra: -<br>Última palabra: -<br>";
+        }
+    }
+
+    /* Ejercicio 2: div calificaciones */
+    var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8, 7.5, 1, 7.5, 8);
+
+    function notasDebajoDeCinco(arrayNotas) {
+        var resultado = [];
+        var i = 0;
+        while (i < arrayNotas.length) {
+            if (arrayNotas[i] < 5) {
+                resultado.push(arrayNotas[i]);
+            }
+            i++;
+        }
+        return resultado;
+    }
+
+    function numeroAleatorio() {
+        return Math.floor(Math.random() * 6) + 5;
+    }
+
+    function mostrarCalificaciones() {
+        var divCalificaciones = document.getElementById("calificaciones");
+        var aprobados = 0;
+        var notasUnicas = [];
+        var textoNotasUnicas = "";
+        var suspendidas = [];
+        var notasParesSuspendidas = [];
+        var notasImparesMayor7 = [];
+        var notasAprobadas = [];
+        var notasNuevas = [];
+
+        for (var i = 0; i < notas.length; i++) {
+            if (notas[i] >= 5) {
+                aprobados++;
+            }
+        }
+
+        for (var i = 0; i < notas.length; i++) {
+            var repetida = false;
+            for (var j = 0; j < notas.length; j++) {
+                if (i !== j && notas[i] === notas[j]) {
+                    repetida = true;
+                    break;
+                }
+            }
+            if (!repetida) {
+                notasUnicas.push(notas[i]);
+            }
+        }
+
+        for (var i = 0; i < notasUnicas.length; i++) {
+            textoNotasUnicas += notasUnicas[i];
+            if (i < notasUnicas.length - 1) {
+                textoNotasUnicas += ", ";
+            }
+        }
+
+        suspendidas = notasDebajoDeCinco(notas);
+        for (var i = 0; i < suspendidas.length; i++) {
+            if (suspendidas[i] % 2 === 0) {
+                notasParesSuspendidas.push(suspendidas[i]);
+            }
+        }
+
+        for (var nota of notas) {
+            if (nota >= 7 && nota % 2 !== 0) {
+                notasImparesMayor7.push(nota);
+            }
+        }
+
+        for (var indice in notas) {
+            if (notas[indice] >= 5) {
+                notasAprobadas.push(notas[indice]);
+            }
+        }
+
+        notasNuevas = notasAprobadas.slice();
+        do {
+            notasNuevas.push(numeroAleatorio());
+        } while (notasNuevas.length < notas.length);
+
+        notasNuevas.sort(function (a, b) {
+            return b - a;
+        });
+
+        divCalificaciones.innerHTML = "<strong>Ejercicio 2 - Calificaciones</strong><br>";
+        divCalificaciones.innerHTML += "Número de aprobados: " + aprobados + "<br>";
+        divCalificaciones.innerHTML += "Notas no repetidas: " + textoNotasUnicas + "<br>";
+        divCalificaciones.innerHTML += "Notas pares de los suspendidos: " + notasParesSuspendidas.join(", ") + "<br>";
+        divCalificaciones.innerHTML += "Notas impares de los que han sacado al menos un 7: " + notasImparesMayor7.join(", ") + "<br>";
+        divCalificaciones.innerHTML += "Notas aprobadas: " + notasAprobadas.join(", ") + "<br>";
+        divCalificaciones.innerHTML += "Nuevo array ordenado: " + notasNuevas.join(", ") + "<br>";
+    }
+
+    window.onload = mostrarCalificaciones;
 </script>
 </body>
 </html>

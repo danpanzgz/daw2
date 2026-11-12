@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apuntes de JavaScript</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>3.10.2. Estructuras de repetición</h1>
+
+    <div class="controls">
+      <a class="button-link" href="../index.html">Volver</a>
+    </div>
+
+    <p class="menu-description">
+      Estas estructuras de control se llaman bucles y se emplean para que, de manera repetitiva,
+      se pueda ejecutar «n» veces una instrucción. Es igual que en el resto de lenguajes de programación.
+    </p>
+
+    <div class="exercise-list">
+      <div class="exercise-item">
+        <h3>a) For</h3>
+        <p>Se ejecuta un bloque de código mientras la condición indicada sea verdadera.</p>
+        <pre><code>for (let a = 0; a &lt; 10; a++) {
+  console.log(a);
+  if (a === 7) {
+    break;
+  }
+}</code></pre>
+        <button type="button" data-example="forLoop">Ejecutar script</button>
+      </div>
+
+      <div class="exercise-item">
+        <h3>b) While y Do-While</h3>
+        <p>
+          El bucle while ejecuta el código mientras la condición siga siendo cierta. El do...while
+          se asegura de ejecutarlo al menos una vez y luego comprueba la condición.
+        </p>
+        <pre><code>let a = 0;
+while (a &lt; 5) {
+  console.log(a);
+  a++;
+}
+
+do {
+  console.log('Estoy dentro del do...while');
+} while (a !== 5);</code></pre>
+        <button type="button" data-example="whileLoop">Ejecutar script</button>
+      </div>
+
+      <div class="exercise-item">
+        <h3>c) For in</h3>
+        <p>
+          Se recorre el índice de un array o las propiedades de un objeto. Es útil para recorrer
+          estructuras con clave-valor, sobre todo en objetos.
+        </p>
+        <pre><code>const alumno = ['Alberto', 'Lopez', 25];
+for (const i in alumno) {
+  console.log(alumno[i]);
+}
+
+const persona = { nombre: 'Ana', edad: 25, pais: 'Chile' };
+for (const clave in persona) {
+  console.log(clave, ':', persona[clave]);
+}</code></pre>
+        <button type="button" data-example="forInLoop">Ejecutar script</button>
+      </div>
+
+      <div class="exercise-item">
+        <h3>d) ForEach</h3>
+        <p>
+          Es un método para arrays que ejecuta una función por cada elemento del array. No permite
+          salir con break ni return, así que si necesitas interrumpir el recorrido conviene usar for...of.
+        </p>
+        <pre><code>const numeros = [10, 20, 30];
+numeros.forEach((valor, indice) => {
+  console.log(`Índice ${indice}: ${valor}`);
+});</code></pre>
+        <button type="button" data-example="forEachLoop">Ejecutar script</button>
+      </div>
+
+      <div class="exercise-item">
+        <h3>e) For of</h3>
+        <p>
+          Recorre directamente los elementos de un array, string, mapa o conjunto. Es más claro que
+          for...in cuando se quiere iterar sobre valores.
+        </p>
+        <pre><code>const alumno = ['Juan', 'Perez', 25];
+for (const valor of alumno) {
+  console.log(valor);
+}
+
+function buscarValor(arr, objetivo) {
+  for (const valor of arr) {
+    if (valor === objetivo) {
+      return `Encontrado: ${valor}`;
+    }
+  }
+  return 'No encontrado';
+}</code></pre>
+        <button type="button" data-example="forOfLoop">Ejecutar script</button>
+      </div>
+    </div>
+
+    <div class="exercise-item" style="margin-top: 20px;">
+      <h3>Salida</h3>
+      <pre id="output">Pulsa un botón para ejecutar el ejemplo.</pre>
+    </div>
+  </div>
+
+  <script>
+    const snippets = {
+      forLoop: `for (let a = 0; a < 10; a++) {
+  console.log(a);
+  if (a === 7) {
+    break;
+  }
+}`,
+      whileLoop: `let a = 0;
+while (a < 5) {
+  console.log(a);
+  a++;
+}
+
+do {
+  console.log('Estoy dentro del do...while');
+} while (a !== 5);`,
+      forInLoop: `const alumno = ['Alberto', 'Lopez', 25];
+for (const i in alumno) {
+  console.log(alumno[i]);
+}
+
+const persona = { nombre: 'Ana', edad: 25, pais: 'Chile' };
+for (const clave in persona) {
+  console.log(clave, ':', persona[clave]);
+}`,
+      forEachLoop: `const numeros = [10, 20, 30];
+numeros.forEach((valor, indice) => {
+  console.log(\`Índice \${indice}: \${valor}\`);
+});`,
+      forOfLoop: `const alumno = ['Juan', 'Perez', 25];
+for (const valor of alumno) {
+  console.log(valor);
+}
+
+function buscarValor(arr, objetivo) {
+  for (const valor of arr) {
+    if (valor === objetivo) {
+      return \`Encontrado: \${valor}\`;
+    }
+  }
+  return 'No encontrado';
+}
+console.log(buscarValor([10, 20, 30], 20));`
+    };
+
+    const output = document.getElementById('output');
+
+    document.querySelectorAll('button[data-example]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.dataset.example;
+        const code = snippets[key];
+        const lines = [];
+
+        try {
+          const originalLog = console.log;
+          console.log = (...args) => {
+            lines.push(args.map((value) => String(value)).join(' '));
+          };
+
+          new Function(code)();
+          console.log = originalLog;
+
+          output.textContent = lines.length ? lines.join('\n') : 'El script se ejecutó correctamente.';
+        } catch (error) {
+          output.textContent = 'Error: ' + error.message;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
